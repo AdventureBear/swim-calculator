@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import './PaceResults.css'
+import PaceResultRow from './PaceResultRow'
 
 class PaceResults extends Component {
     constructor(props){
@@ -9,7 +10,10 @@ class PaceResults extends Component {
     render(){
         return (
             <div className='component-paceresults'>
-                <h1>PaceResults</h1>
+
+                <PaceResultRow />
+
+
             </div>
         )
     }

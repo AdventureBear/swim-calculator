@@ -9,7 +9,7 @@ class Footer extends Component {
     render(){
         return (
             <div className='component-footer'>
-                <h1>Footer</h1>
+                <p>Presented By: <a href="http://www.steelcityendurance.com/">Steel City Endurance Coaching</a></p>
             </div>
         )
     }

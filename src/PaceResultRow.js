@@ -9,7 +9,32 @@ class PaceResultRow extends Component {
     render(){
         return (
             <div className='component-paceresultrow'>
-                <h1>PaceResultRow</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Distance</th>
+                            <th>Time</th>
+                            <th>Pace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100yd</td>
+                            <td>1:34</td>
+                            <td>1:34</td>
+                        </tr>
+                        <tr>
+                            <td>200yd</td>
+                            <td>3:10</td>
+                            <td>1:38</td>
+                        </tr>
+                        <tr>
+                            <td>400yd</td>
+                            <td>6:30</td>
+                            <td>1:42</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         )
     }

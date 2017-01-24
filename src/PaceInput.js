@@ -9,7 +9,8 @@ class PaceInput extends Component {
     render(){
         return (
             <div className='component-paceinput'>
-                <h1>PaceInput</h1>
+                <span>Best 100:</span><input type="text" size="20" label="minutes"  placeholder = "00"/> <input  type="text" size="20" label="seconds" placeholder ="00" />
+                <input type="submit" value="Submit" />
             </div>
         )
     }
