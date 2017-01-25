@@ -8,12 +8,22 @@ class PaceResults extends Component {
     }
 
     render(){
+        var rows = []
+        this.props.paces.forEach(function(row){
+        rows.push( <PaceResultRow key = {row.distance} row = {row} />)
+        })
         return (
             <div className='component-paceresults'>
-
-                <PaceResultRow paces = {this.props.paces} />
-
-
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Distance</th>
+                        <th>Time</th>
+                        <th>Pace</th>
+                    </tr>
+                    </thead>
+                    <tbody>{rows}</tbody>
+                </table>
             </div>
         )
     }
