@@ -17,7 +17,11 @@ class App extends Component {
         </div>
         <div className="App-intro">
           <PaceInput />
-          <PaceResults />
+          <PaceResults paces = {[
+          {"distance": "100","duration": "1:28", "pace": "1:28"},
+           {"distance": "200","duration": "3:06", "pace": "1:32"},
+            {"distance": "400","duration": "6:20", "pace": "1:36"}
+          ]} />
           <Footer />
         </div>
       </div>

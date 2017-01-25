@@ -11,7 +11,7 @@ class PaceResults extends Component {
         return (
             <div className='component-paceresults'>
 
-                <PaceResultRow />
+                <PaceResultRow paces = {this.props.paces} />
 
 
             </div>

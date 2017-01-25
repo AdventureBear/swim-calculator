@@ -18,21 +18,17 @@ class PaceResultRow extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>100yd</td>
-                            <td>1:34</td>
-                            <td>1:34</td>
-                        </tr>
-                        <tr>
-                            <td>200yd</td>
-                            <td>3:10</td>
-                            <td>1:38</td>
-                        </tr>
-                        <tr>
-                            <td>400yd</td>
-                            <td>6:30</td>
-                            <td>1:42</td>
-                        </tr>
+                    {
+                        this.props.paces.map((row, i)=> {
+                            return (
+                                <tr>
+                                    <td>{row.distance}</td>
+                                    <td>{row.duration}</td>
+                                    <td>{row.pace}</td>
+                                </tr>
+                            )
+                          })
+                    }
                     </tbody>
                 </table>
             </div>
@@ -41,7 +37,7 @@ class PaceResultRow extends Component {
 }
 
 PaceResultRow.propTypes = {
-
+    paces: React.PropTypes.array
 };
 
 export default PaceResultRow
