@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import './PaceResultRow.css'
+import convert from 'convert-seconds'
 
 class PaceResultRow extends Component {
     constructor(props){
@@ -7,11 +8,13 @@ class PaceResultRow extends Component {
     }
 
     render(){
+        const duration = convert(this.props.row.duration)
+        const pace = convert(this.props.row.duration/this.props.row.distance)
         return (
                 <tr className='component-paceresultrow'>
                     <td>{this.props.row.distance}</td>
-                    <td>{this.props.row.duration}</td>
-                    <td>{this.props.row.pace}</td>
+                    <td>{duration.minutes}:{duration.seconds}</td>
+                    <td>{pace.minutes}:{pace.seconds}</td>
                 </tr>
         )
     }
