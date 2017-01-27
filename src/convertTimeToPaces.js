@@ -9,6 +9,6 @@
 export default function convertTimeToPaces(t1, d1, decay, d2Arr) {
   const b = t1 / (d1 ** decay)
   return  d2Arr.map((distance) =>{
-    return b * (distance ** decay)
+    return {"distance": distance, "duration" : b * (distance ** decay)}
   })
 }

@@ -7,7 +7,6 @@ import PaceResults from './PaceResults'
 import Footer from './Footer'
 import timestring from 'timestring'
 import convertTimeToPaces from './convertTimeToPaces'
-import testFunc from './testFunc'
 
 class App extends Component {
   constructor(props){
@@ -15,22 +14,24 @@ class App extends Component {
     this.state={
       t1HumanReadable: "1m 42s",
       t1Seconds: 90,
-      d2Arr: [200,400,800,1000,1500,1600],
-      t2Arr: [0,0,0,0,0,0],
-      greeting: "hi"
-    }
+      d2Arr: [100,200,400,800,1000,1500,1600],
+      t2Arr: [
+        {"distance": 100,"duration": 90},
+        {"distance": 200,"duration": 191},
+        {"distance": 400,"duration": 372}
+      ]
+}
   }
   handleCalculateClick = (event) => {
-    console.log(this.state.greeting);
+
 
     console.log('pace input changed to:', event);
     this.setState({
-      greeting: testFunc("Suzanne"),
       t1Seconds:  timestring(event),
       t2Arr: convertTimeToPaces(this.state.t1Seconds, 100,1.06, this.state.d2Arr)
     })
 
-    console.log(this.state.greeting, this.state.t1Seconds, this.state.t2Arr)
+    console.log( this.state.t1Seconds, this.state.t2Arr)
   }
   render() {
     return (
@@ -44,11 +45,8 @@ class App extends Component {
 
 
           <PaceInput calculate={this.handleCalculateClick} />
-          <PaceResults paces = {[
-          {"distance": "100","duration": 90},
-           {"distance": "200","duration": 191},
-            {"distance": "400","duration": 372}
-          ]} />
+
+          <PaceResults paces = {this.state.t2Arr} />
           <Footer />
         </div>
       </div>

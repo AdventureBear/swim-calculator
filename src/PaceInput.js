@@ -19,8 +19,6 @@ class PaceInput extends Component {
 
     }
     handleSubmit(event) {
-        alert(this.paceInput.value)
-        //alert('A time was submitted: ' + this.state.value);
         event.preventDefault()
         this.props.calculate(this.paceInput.value)
     }
