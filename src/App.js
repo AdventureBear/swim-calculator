@@ -7,6 +7,7 @@ import PaceResults from './PaceResults'
 import Footer from './Footer'
 import timestring from 'timestring'
 import convertTimeToPaces from './convertTimeToPaces'
+import testFunc from './testFunc'
 
 class App extends Component {
   constructor(props){
@@ -14,17 +15,22 @@ class App extends Component {
     this.state={
       t1HumanReadable: "1m 42s",
       t1Seconds: 90,
-      d2Arr: [200,400,800,1000,1500,1600]
+      d2Arr: [200,400,800,1000,1500,1600],
+      t2Arr: [0,0,0,0,0,0],
+      greeting: "hi"
     }
   }
   handleCalculateClick = (event) => {
-    console.log('pace input changed to:', event.target.value);
+    console.log(this.state.greeting);
+
+    console.log('pace input changed to:', event);
     this.setState({
-      t1Seconds:  timestring(this.state.t1HumanReadable),
-      t2Arr:  convertTimeToPaces(this.state.t1Seconds, 100,1.06, this.state.d2Arr)
+      greeting: testFunc("Suzanne"),
+      t1Seconds:  timestring(event),
+      t2Arr: convertTimeToPaces(this.state.t1Seconds, 100,1.06, this.state.d2Arr)
     })
 
-
+    console.log(this.state.greeting, this.state.t1Seconds, this.state.t2Arr)
   }
   render() {
     return (
@@ -35,6 +41,8 @@ class App extends Component {
           <p>Swim Pace Calculator</p>
         </div>
         <div className="App-intro">
+
+
           <PaceInput calculate={this.handleCalculateClick} />
           <PaceResults paces = {[
           {"distance": "100","duration": 90},
