@@ -17,10 +17,16 @@ class App extends Component {
       d2Arr: [100,200,400,800,1000,1500,1600],
       t2Arr: [
         {"distance": 100,"duration": 90},
-        {"distance": 200,"duration": 191},
-        {"distance": 400,"duration": 372}
+        {"distance": 200,"duration": 197},
+        {"distance": 400,"duration": 391},
+        {"distance": 800,"duration": 815},
+        {"distance": 1000,"duration": 1033},
+        {"distance": 1500,"duration": 1588},
+        {"distance": 1600,"duration": 1700},
       ]
 }
+
+
   }
   handleCalculateClick = (event) => {
 
