@@ -1,4 +1,11 @@
 .component-paceinput {
     background-color: #fdefde;
     color: #321321;
+    padding: 10px;
+
+}
+input {
+    padding: 5px;
+    font-size: 1em;
+    width: 80px;
 }

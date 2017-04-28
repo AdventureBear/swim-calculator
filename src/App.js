@@ -30,11 +30,11 @@ class App extends Component {
   }
   handleCalculateClick = (event) => {
 
-
     console.log('pace input changed to:', event);
     this.setState({
       t1Seconds:  timestring(event),
-      t2Arr: convertTimeToPaces(this.state.t1Seconds, 100,1.06, this.state.d2Arr)
+      t2Arr: convertTimeToPaces(timestring(event), 100,1.06, this.state.d2Arr)
+      //t2Arr: convertTimeToPaces(this.state.t1Seconds, 100,1.06, this.state.d2Arr)
     })
 
     console.log( this.state.t1Seconds, this.state.t2Arr)
@@ -44,7 +44,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <span><img src={logo} className="App-logo" alt="logo" /></span>
-          <h2>Pacemaker</h2>
+          <h2 className="title">Pacemaker</h2>
           <p>Swim Pace Calculator</p>
         </div>
         <div className="App-intro">

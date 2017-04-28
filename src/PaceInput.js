@@ -15,8 +15,6 @@ class PaceInput extends Component {
     }
     handleChange(event) {
         this.setState({value: event.target.value});
-
-
     }
     handleSubmit(event) {
         event.preventDefault()
@@ -26,13 +24,12 @@ class PaceInput extends Component {
         return (
         <form className='component-paceinput' onSubmit={this.handleSubmit}>
             <label>
-                Best 100 Time:
-
+                <span>Best 100 Time:  </span>
 
                 <input
                   type="text"
                   ref={(input) => { this.paceInput = input; }}
-                  placeholder = "1m 32s"
+                  placeholder = "1m 30s"
                   //* value={this.state.value}
                   onChange={this.handleChange} />
             </label>
@@ -44,6 +41,7 @@ class PaceInput extends Component {
 }
 
 PaceInput.propTypes = {
+
     calculate: React.PropTypes.func
 };
 
